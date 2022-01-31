@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datetime superapp</title>
     <script src="./js/main.js" type="module"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<div id="switch">
+    <button id="switchDateCalc" name="datecalc">Калькулятор дат</button>
+    <button id="switchTimer" name="timer">Таймер</button>
+</div>
 <form id="datecalc">
     <h3>Калькулятор дат</h3>
     <label>
@@ -21,7 +26,20 @@
     </label>
     <button type="submit">Расчитать промежуток</button>
     <p id="datecalc__result"></p>
+    <hr>
 </form>
+
+<div id="timer">
+    <h3>Таймер</h3>
+        <h4>Введите время</h4>
+         <input id="timerField" type="number" min="0" step="1" value="0" style="width: 100px">
+    <br>
+    <br>
+        <div id="timerForm">
+            <button id="start">Начать</button>
+            <button id="stop" class="hidden">Стоп</button>
+        </div>
+</div>
 </body>
 
 </html>
