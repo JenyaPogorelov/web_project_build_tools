@@ -1,19 +1,12 @@
-// import {Howler} from 'https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.min.js';
-// import {} from 'howler';
-
 import {switchForm} from "./switchForm.js";
 
 const timerField = document.getElementById('timerField');
 let tik = '';
 
-
 export function timer(command) {
-    // let sound = new Howl({
-    //     src: ['kids.mp3'],
-    //     html5: true
-    // });
-    //
-    // sound.play();
+    let sound = new Howl({
+        src: ['../voice/kids.mp3'],
+    });
 
     const doCommand = command;
 
@@ -27,6 +20,7 @@ export function timer(command) {
             }
             if (+timerField.value === 0) {
                 console.log('Пипип время вышло')
+                sound.play();
                 clearInterval(tik)
                 switchForm('start')
                 switchForm('stop')
