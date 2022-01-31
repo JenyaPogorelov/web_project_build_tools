@@ -1,5 +1,6 @@
 import {timer} from './timer.js';
 
+
 const timerField = document.getElementById('timerField');
 const start = document.getElementById('start')
 const stop = document.getElementById('stop')
