@@ -1,6 +1,7 @@
 const {resolve} = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
 const MiniExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 
@@ -30,12 +31,29 @@ module.exports = {
             }
         ]
     },
+    // optimization: {
+    //     minimize: true,
+    //     minimizer: [
+    //         new CssMinimizerPlugin({
+    //             minimizerOptions: [
+    //                 {}, // Options for the first function (CssMinimizerPlugin.cssnanoMinify)
+    //                 {}, // Options for the second function (CssMinimizerPlugin.cleanCssMinify)
+    //                 {}, // Options for the third function
+    //             ],
+    //             minify: [
+    //                 CssMinimizerPlugin.cssnanoMinify,
+    //                 CssMinimizerPlugin.cleanCssMinify,
+    //             ],
+    //         }),
+    //     ],
+    //
+    // },
     plugins: [
         new HtmlPlugin({template: resolve(__dirname, 'index.html')}),
         new MiniExtractPlugin({
             filename: '[name].[contenthash].css'
         }),
-        new BundleAnalyzerPlugin()
+        // new BundleAnalyzerPlugin()
     ],
     devServer: {
         port: 3000
