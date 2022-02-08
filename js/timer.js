@@ -1,11 +1,13 @@
 import {switchForm} from "./switchForm.js";
+import {Howl} from 'howler/dist/howler';
+import voiceMP3 from "../voice/kids.mp3"
 
 const timerField = document.getElementById('timerField');
 let tik = '';
 
 export function timer(command) {
     let sound = new Howl({
-        src: ['../voice/kids.mp3'],
+        src: [voiceMP3],
     });
 
     const doCommand = command;

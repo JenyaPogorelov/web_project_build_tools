@@ -3,6 +3,8 @@ import getDateDiff from './getDateDiff.js'
 import {switchForm} from './switchForm.js'
 import {startStopTimer} from './startStopTimer.js'
 
+import '../css/main.css'
+
 const form = document.getElementById('datecalc');
 const buttonsSwitch = document.getElementById('switch');
 const buttonTimer = document.getElementById('timerForm');
